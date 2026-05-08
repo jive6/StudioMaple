@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Studio Maple｜フリーランスライター・岩見梓司。Webコンテンツ、インタビュー記事、冊子など、読み手の心に届く文章をていねいにお書きします。">
+<title>Studio Maple｜岩見 梓司 フリーランスライター</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --sand: #FAF8F4;
+    --sand-mid: #F0EBE2;
+    --sand-dark: #E0D4C4;
+    --brown-light: #C4B09A;
+    --brown: #A0856A;
+    --brown-dark: #8A7058;
+    --text: #3A3228;
+    --text-mid: #5C4A36;
+    --text-light: #7A6A58;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--sand);
+    color: var(--text);
+    line-height: 1.8;
+    font-size: 15px;
+  }
+
+  a { text-decoration: none; color: inherit; }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 4rem;
+    background: var(--sand);
+    border-bottom: 1px solid var(--sand-dark);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .logo {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    color: var(--text-mid);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    color: var(--text-light);
+  }
+
+  .nav-links a:hover { color: var(--brown); }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 88vh;
+    align-items: center;
+    padding: 5rem 4rem;
+    gap: 5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    color: var(--brown);
+    margin-bottom: 1.2rem;
+  }
+
+  .hero h1 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(1.9rem, 3.5vw, 3rem);
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 em { font-style: normal; color: var(--brown); }
+
+  .hero-sub {
+    font-size: 0.92rem;
+    color: var(--text-light);
+    line-height: 2.1;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+  .btn-fill {
+    background: var(--brown);
+    color: var(--sand);
+    padding: 0.75rem 2rem;
+    border-radius: 2px;
+    font-size: 0.82rem;
+    letter-spacing: 0.14em;
+    transition: background 0.2s;
+    display: inline-block;
+  }
+  .btn-fill:hover { background: var(--brown-dark); }
+
+  .btn-line {
+    border: 1px solid var(--brown-light);
+    color: var(--text-light);
+    padding: 0.75rem 2rem;
+    border-radius: 2px;
+    font-size: 0.82rem;
+    letter-spacing: 0.14em;
+    transition: all 0.2s;
+    display: inline-block;
+  }
+  .btn-line:hover { background: var(--sand-mid); }
+
+  .hero-visual { display: flex; justify-content: center; align-items: center; }
+
+  .paper-stack { position: relative; width: 280px; height: 340px; }
+
+  .paper {
+    position: absolute;
+    border: 1px solid #E8DCCF;
+    border-radius: 3px;
+    width: 250px;
+    height: 310px;
+  }
+  .paper:nth-child(1) { top: 28px; left: 28px; transform: rotate(4deg); background: #F5EDE0; }
+  .paper:nth-child(2) { top: 14px; left: 18px; transform: rotate(-2deg); background: #FAF3E8; }
+  .paper:nth-child(3) { top: 0; left: 18px; transform: rotate(0.5deg); background: #FFF8F2; padding: 1.8rem 1.6rem; }
+
+  .paper-title { font-family: 'Noto Serif JP', serif; font-size: 0.85rem; color: #8A7058; margin-bottom: 0.8rem; }
+  .p-lines { display: flex; flex-direction: column; gap: 0.65rem; }
+  .p-line { height: 1px; background: #E0D0BC; }
+  .p-line.s { width: 50%; } .p-line.m { width: 78%; } .p-line.l { width: 95%; }
+
+  .sec { max-width: 1100px; margin: 0 auto; padding: 5rem 4rem; }
+  .sec-bg { background: var(--sand-mid); }
+
+  .sec-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    color: var(--brown);
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+
+  .divider { width: 36px; height: 1px; background: var(--brown); margin-bottom: 1.8rem; }
+
+  .sec-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+    font-weight: 300;
+    color: var(--text);
+    margin-bottom: 0.6rem;
+  }
+
+  .sec-lead { font-size: 0.9rem; color: var(--text-light); line-height: 2; margin-bottom: 3rem; }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+  }
+
+  .s-card {
+    background: var(--sand);
+    border: 1px solid var(--sand-dark);
+    padding: 1.8rem;
+    border-radius: 3px;
+  }
+
+  .s-icon {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--brown);
+  }
+
+  .s-card h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-mid);
+    margin-bottom: 0.6rem;
+  }
+
+  .s-card p { font-size: 0.85rem; color: var(--text-light); line-height: 1.95; }
+
+  .strength-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .str-item { border-top: 2px solid var(--brown-light); padding-top: 1.3rem; }
+
+  .str-item h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-mid);
+    margin-bottom: 0.6rem;
+  }
+
+  .str-item p { font-size: 0.85rem; color: var(--text-light); line-height: 1.95; }
+
+  .works-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+  }
+
+  .w-card {
+    background: var(--sand);
+    border: 1px solid var(--sand-dark);
+    border-radius: 3px;
+    padding: 1.6rem 1.8rem;
+  }
+
+  .w-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    background: #EFE7DC;
+    color: var(--brown-dark);
+    padding: 0.2rem 0.7rem;
+    border-radius: 2px;
+    margin-bottom: 0.8rem;
+  }
+
+  .w-card h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 0.97rem;
+    font-weight: 400;
+    color: var(--text-mid);
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+
+  .w-card p { font-size: 0.83rem; color: var(--text-light); line-height: 1.9; }
+
+  .works-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+
+  .works-box {
+    background: var(--sand);
+    border: 1px solid var(--sand-dark);
+    border-radius: 3px;
+    padding: 1.8rem 2rem;
+  }
+
+  .works-box h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-mid);
+    margin-bottom: 1rem;
+    padding-bottom: 0.7rem;
+    border-bottom: 1px solid var(--sand-dark);
+  }
+
+  .works-box ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+
+  .works-box li {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    padding-left: 1rem;
+    position: relative;
+    line-height: 1.7;
+  }
+
+  .works-box li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--brown-light);
+    font-size: 0.8rem;
+  }
+
+  .works-note {
+    font-size: 0.78rem;
+    color: var(--brown-light);
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--sand-dark);
+  }
+
+  .profile-section {
+    background: var(--sand-mid);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .profile-section::before {
+    content: 'Maple';
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 12rem;
+    font-weight: 300;
+    color: rgba(160, 133, 106, 0.06);
+    letter-spacing: -0.02em;
+    pointer-events: none;
+    line-height: 1;
+    user-select: none;
+  }
+
+  .profile-grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 5rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .profile-img-wrap {
+    position: relative;
+  }
+
+  .profile-img-wrap::before {
+    content: '';
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    right: -16px;
+    bottom: -16px;
+    border: 1px solid var(--brown-light);
+    border-radius: 4px;
+    z-index: 0;
+  }
+
+  .profile-img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 8px 32px rgba(90,60,30,0.12);
+  }
+
+  .profile-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+
+  .profile-deco {
+    position: absolute;
+    bottom: -1.5rem;
+    left: -1.5rem;
+    width: 80px;
+    height: 80px;
+    z-index: 2;
+  }
+
+  .profile-content {
+    padding: 1rem 0;
+  }
+
+  .profile-studio {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    color: var(--brown);
+    margin-bottom: 0.4rem;
+    text-transform: uppercase;
+  }
+
+  .profile-name {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--text);
+    margin-bottom: 0.2rem;
+    line-height: 1.3;
+  }
+
+  .profile-name-en {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.3rem;
+  }
+
+  .profile-role {
+    font-size: 0.82rem;
+    color: var(--text-light);
+    letter-spacing: 0.08em;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--sand-dark);
+  }
+
+  .profile-body {
+    font-size: 0.92rem;
+    color: var(--text-mid);
+    line-height: 2.2;
+    margin-bottom: 1rem;
+  }
+
+  .profile-quote {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1rem;
+    color: var(--brown);
+    line-height: 1.9;
+    padding: 1.2rem 1.5rem;
+    border-left: 3px solid var(--brown-light);
+    background: rgba(160,133,106,0.06);
+    border-radius: 0 3px 3px 0;
+    margin: 1.5rem 0;
+  }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+
+  .tag {
+    border: 1px solid var(--brown-light);
+    color: var(--text-light);
+    font-size: 0.75rem;
+    padding: 0.25rem 0.85rem;
+    border-radius: 2px;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1.8rem;
+    flex-wrap: wrap;
+  }
+
+  .social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.78rem;
+    color: var(--text-light);
+    border: 1px solid var(--sand-dark);
+    padding: 0.4rem 1rem;
+    border-radius: 2px;
+    transition: all 0.2s;
+    background: var(--sand);
+  }
+
+  .social-link:hover {
+    border-color: var(--brown-light);
+    color: var(--brown);
+    background: var(--sand);
+  }
+
+  .flow-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--sand-dark);
+    border: 1px solid var(--sand-dark);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 3rem;
+  }
+
+  .flow-step { background: var(--sand); padding: 2rem 1.5rem; }
+
+  .step-num {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 2rem;
+    color: var(--brown-light);
+    font-weight: 300;
+    display: block;
+    line-height: 1;
+    margin-bottom: 0.8rem;
+  }
+
+  .flow-step h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--text-mid);
+    margin-bottom: 0.5rem;
+  }
+
+  .flow-step p { font-size: 0.82rem; color: var(--text-light); line-height: 1.9; }
+
+  .contact-wrap {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+    text-align: center;
+  }
+
+  .contact-lead { font-size: 0.9rem; color: var(--text-light); line-height: 2.1; margin-bottom: 2.5rem; }
+
+  .contact-form { display: flex; flex-direction: column; gap: 1rem; text-align: left; }
+
+  .f-label {
+    display: block;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: var(--text-light);
+    margin-bottom: 0.4rem;
+  }
+
+  .f-label span { color: var(--brown); margin-left: 0.3rem; font-size: 0.7rem; }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: #FFF8F0;
+    border: 1px solid var(--sand-dark);
+    border-radius: 2px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.88rem;
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .contact-form input:focus,
+  .contact-form textarea:focus { border-color: var(--brown); }
+
+  .contact-form textarea { height: 120px; resize: vertical; }
+
+  .f-submit {
+    background: var(--brown);
+    color: var(--sand);
+    padding: 0.9rem;
+    border: none;
+    border-radius: 2px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.82rem;
+    letter-spacing: 0.16em;
+    cursor: pointer;
+    transition: background 0.2s;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .f-submit:hover { background: var(--brown-dark); }
+
+  .contact-note { font-size: 0.78rem; color: var(--brown-light); margin-top: 1rem; }
+
+  footer {
+    background: var(--text);
+    color: var(--brown-light);
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+  }
+
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1.2rem; font-size: 0.75rem; }
+    .hero { grid-template-columns: 1fr; padding: 3rem 1.5rem; min-height: auto; gap: 0; }
+    .hero-visual { display: none; }
+    .sec { padding: 3.5rem 1.5rem; }
+    .services-grid, .strength-grid, .works-grid, .works-cards { grid-template-columns: 1fr; }
+    .profile-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .profile-img-wrap { max-width: 260px; margin: 0 auto; }
+    .profile-section::before { display: none; }
+    .flow-steps { grid-template-columns: 1fr 1fr; }
+    .contact-wrap { padding: 3.5rem 1.5rem; }
+  }
+
+  @media (max-width: 480px) {
+    .flow-steps { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="top">
+  <div class="logo">
+    <span style="font-family:'Noto Serif JP',serif;letter-spacing:0.1em;color:var(--brown);">Studio Maple</span>
+    <span style="font-size:0.7rem;color:var(--text-light);letter-spacing:0.08em;margin-left:0.6rem;">岩見 梓司｜ライター</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#service">サービス</a></li>
+    <li><a href="#works">実績</a></li>
+    <li><a href="#profile">プロフィール</a></li>
+    <li><a href="#contact">お問い合わせ</a></li>
+  </ul>
+</nav>
+
+<div style="max-width:1200px;margin:0 auto;">
+  <div class="hero">
+    <div>
+      <p class="hero-eyebrow">Studio Maple｜Freelance Writer</p>
+      <h1>事業の想いと専門性を、<br><em>信頼される文章</em>に整えます。</h1>
+      <p class="hero-sub">Webコンテンツ・インタビュー記事・冊子など。<br>読み手に伝わり、事業の前進につながるコンテンツづくりを伴走します。</p>
+      <div class="hero-btns">
+        <a class="btn-fill" href="#contact">相談する</a>
+        <a class="btn-line" href="#service">できることを見る</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="paper-stack">
+        <div class="paper"></div>
+        <div class="paper"></div>
+        <div class="paper">
+          <p class="paper-title">つたえる、のこす、うごかす</p>
+          <div class="p-lines">
+            <div class="p-line l"></div><div class="p-line m"></div>
+            <div class="p-line l"></div><div class="p-line s"></div>
+            <div class="p-line l"></div><div class="p-line m"></div>
+            <div class="p-line l"></div><div class="p-line l"></div>
+            <div class="p-line s"></div><div class="p-line m"></div>
+            <div class="p-line l"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec-bg" id="service">
+  <div class="sec">
+    <p class="sec-label">Service</p>
+    <div class="divider"></div>
+    <h2 class="sec-title">サービス内容</h2>
+    <p class="sec-lead">企画段階から公開前の編集まで、必要な範囲に合わせて柔軟に対応します。</p>
+    <div class="services-grid">
+      <div class="s-card">
+        <div class="s-icon">✦</div>
+        <h3>インタビュー記事の作成・取材</h3>
+        <p>経営者、社員、専門家への取材を行い、言葉の背景まで伝わる記事にまとめます。</p>
+      </div>
+      <div class="s-card">
+        <div class="s-icon">✧</div>
+        <h3>記事・コンテンツ制作</h3>
+        <p>オウンドメディア、コラム、導入事例、SEO記事など、目的に合わせた記事を制作します。</p>
+      </div>
+      <div class="s-card">
+        <div class="s-icon">◈</div>
+        <h3>冊子・パンフレット</h3>
+        <p>会社案内・採用パンフ・社内報など、紙媒体の文章制作もご対応可能です。</p>
+      </div>
+      <div class="s-card">
+        <div class="s-icon">◇</div>
+        <h3>経営者発信支援・SNS運用</h3>
+        <p>経営者の考えや事業の方向性を整理し、note・SNS・メールマガジンなどの発信を支えます。</p>
+      </div>
+      <div class="s-card">
+        <div class="s-icon">✤</div>
+        <h3>既存コンテンツの見直し・リライト</h3>
+        <p>文字起こしからの記事化、校正、既存コンテンツの改善などもご相談ください。</p>
+      </div>
+      <div class="s-card">
+        <div class="s-icon">❋</div>
+        <h3>ホームページ文章制作</h3>
+        <p>ランディングページや会社ホームページの文章作成・改善をお手伝いします。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <p class="sec-label">Strength</p>
+  <div class="divider"></div>
+  <h2 class="sec-title">強み</h2>
+  <p class="sec-lead">専門的な内容を、読み手の理解に合わせてていねいに整えます。</p>
+  <div class="strength-grid">
+    <div class="str-item">
+      <h3>複雑な話を、構造から整理</h3>
+      <p>取材内容や資料を丁寧に読み解き、読み手が迷わない流れに組み立てます。</p>
+    </div>
+    <div class="str-item">
+      <h3>事業理解を深めて書く</h3>
+      <p>表面的な紹介ではなく、事業の背景や顧客への価値、伝えるべき論点を掘り下げます。</p>
+    </div>
+    <div class="str-item">
+      <h3>やわらかく、正確な進行</h3>
+      <p>初めて外部ライターへ依頼する方にも安心していただけるよう、進め方を明確に共有します。</p>
+    </div>
+  </div>
+</div>
+
+<div class="sec-bg" id="works">
+  <div class="sec">
+    <p class="sec-label">Works</p>
+    <div class="divider"></div>
+    <h2 class="sec-title">実績・執筆例</h2>
+    <p class="sec-lead">これまでの主な制作実績です。守秘義務のある案件は内容を伏せた形でご紹介します。</p>
+    <div class="works-cards">
+      <div class="w-card">
+        <span class="w-tag">インタビュー記事</span>
+        <h3>経営者インタビュー・採用広報記事</h3>
+        <p>地方企業の代表・従業員へのインタビュー記事を担当。採用サイト向けに20名以上の取材・執筆を行いました。</p>
+      </div>
+      <div class="w-card">
+        <span class="w-tag">Webメディア</span>
+        <h3>ライフスタイルマガジン連載</h3>
+        <p>食と暮らしをテーマにしたWebメディアにて月2本・計24本を執筆。継続的な読者獲得に貢献しました。</p>
+      </div>
+      <div class="w-card">
+        <span class="w-tag">企業ブログ</span>
+        <h3>BtoB企業のオウンドメディア支援</h3>
+        <p>SaaS企業のオウンドメディア立ち上げから記事制作まで、編集方針の策定を含めてサポート。</p>
+      </div>
+      <div class="w-card">
+        <span class="w-tag">冊子・記念誌</span>
+        <h3>創業50周年記念誌の執筆・編集</h3>
+        <p>関係者50名以上へのヒアリングをもとに、企業の歴史と想いを綴った記念誌を制作しました。</p>
+      </div>
+      <div class="w-card">
+        <span class="w-tag">音声・レポート</span>
+        <h3>ウェビナー・音声コンテンツの記事化</h3>
+        <p>ウェビナーや音声配信の内容をもとに、読みやすいレポート記事・テキストコンテンツに整えます。</p>
+      </div>
+      <div class="w-card">
+        <span class="w-tag">SEO記事</span>
+        <h3>SEOコラム・既存記事のリライト</h3>
+        <p>検索意図を踏まえた記事制作と、パフォーマンス改善を目的とした既存記事の見直しに対応します。</p>
+      </div>
+    </div>
+    <p style="font-size:0.78rem;color:var(--brown-light);margin-top:2rem;text-align:center;">※ 実績の詳細はお問い合わせ時にご案内します。</p>
+  </div>
+</div>
+
+<div class="profile-section" id="profile">
+  <div class="sec">
+    <p class="sec-label">Profile</p>
+    <div class="divider"></div>
+    <div class="profile-grid">
+      <div class="profile-img-wrap">
+        <div class="profile-img">
+          <img src="profile.png" alt="岩見 梓司">
+        </div>
+        <svg class="profile-deco" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="18" stroke="#C4B09A" stroke-width="1" fill="none"/>
+          <circle cx="20" cy="20" r="10" stroke="#C4B09A" stroke-width="0.5" fill="none"/>
+          <line x1="2" y1="20" x2="38" y2="20" stroke="#C4B09A" stroke-width="0.5"/>
+          <line x1="20" y1="2" x2="20" y2="38" stroke="#C4B09A" stroke-width="0.5"/>
+        </svg>
+      </div>
+      <div class="profile-content">
+        <p class="profile-studio">Studio Maple</p>
+        <p class="profile-name">岩見 梓司</p>
+        <p class="profile-name-en">Azushi Iwami</p>
+        <p class="profile-role">フリーランスライター・編集者</p>
+        <p class="profile-body">出版社での編集経験を経て、フリーランスライターとして独立。食・暮らし・ビジネス・地域など幅広いテーマで執筆活動を行っています。</p>
+        <div class="profile-quote">「書くことは、人と人をつなぎ、大切なものをのこす手段。」</div>
+        <p class="profile-body">取材相手の言葉を大切にしながら、読者に伝わる構成と表現へ整えることを心がけています。クライアントの想いをていねいに汲み取り、事業の前進につながる文章を届けることが信条です。</p>
+        <div class="tags">
+          <span class="tag">Webコンテンツ</span>
+          <span class="tag">取材・インタビュー</span>
+          <span class="tag">SEOライティング</span>
+          <span class="tag">食・暮らし</span>
+          <span class="tag">ビジネス</span>
+          <span class="tag">地域・観光</span>
+          <span class="tag">採用広報</span>
+        </div>
+        <div class="social-links">
+          <a class="social-link" href="https://note.com/iwm_s" target="_blank" rel="noopener">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            note
+          </a>
+          <a class="social-link" href="https://stand.fm/channels/5e86845e35414a1b15a1cf7a" target="_blank" rel="noopener">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+            音声配信
+          </a>
+          <a class="social-link" href="https://x.com/iwamishinji" target="_blank" rel="noopener">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            X (Twitter)
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="sec-bg">
+  <div class="sec">
+    <p class="sec-label">Flow</p>
+    <div class="divider"></div>
+    <h2 class="sec-title">ご依頼の流れ</h2>
+    <p class="sec-lead">初回相談から納品まで、無理のない進行でご一緒します。</p>
+    <div class="flow-steps">
+      <div class="flow-step">
+        <span class="step-num">01</span>
+        <h3>お問い合わせ</h3>
+        <p>制作したい内容、公開時期、ご予算感を分かる範囲でお知らせください。</p>
+      </div>
+      <div class="flow-step">
+        <span class="step-num">02</span>
+        <h3>ヒアリング・お見積り</h3>
+        <p>目的や読者像を確認し、対応範囲・スケジュール・費用をご提案します。</p>
+      </div>
+      <div class="flow-step">
+        <span class="step-num">03</span>
+        <h3>取材・構成作成</h3>
+        <p>必要に応じて取材を行い、記事の骨子や見出し構成を作成します。</p>
+      </div>
+      <div class="flow-step">
+        <span class="step-num">04</span>
+        <h3>執筆・納品</h3>
+        <p>原稿を作成し、ご確認後に修正を反映して納品します。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="contact">
+  <div class="contact-wrap">
+    <p class="sec-label" style="text-align:center;">Contact</p>
+    <div class="divider" style="margin:0 auto 1.8rem;"></div>
+    <h2 class="sec-title">お問い合わせ</h2>
+    <p class="contact-lead">ご相談は、内容が固まっていない段階でも歓迎です。<br>まずは制作したいテーマやお困りごとをお聞かせください。</p>
+    <form class="contact-form" action="https://formspree.io/f/jiveatnine@gmail.com" method="POST">
+      <div>
+        <label class="f-label">お名前<span>必須</span></label>
+        <input type="text" name="name" placeholder="お名前" required>
+      </div>
+      <div>
+        <label class="f-label">メールアドレス<span>必須</span></label>
+        <input type="email" name="email" placeholder="example@email.com" required>
+      </div>
+      <div>
+        <label class="f-label">ご相談内容</label>
+        <textarea name="message" placeholder="制作したい内容、ご質問などをご記入ください"></textarea>
+      </div>
+      <button type="submit" class="f-submit">送 信 す る</button>
+    </form>
+    <p class="contact-note">通常2営業日以内にご返信します。</p>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 Studio Maple｜岩見 梓司 Freelance Writer. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
